@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Kodlama.io.Devs.Application\Kodlama.io.Devs.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Kodlama.io.Devs.Infrastructure\Kodlama.io.Devs.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Kodlama.io.Devs.Persistence\Kodlama.io.Devs.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,12 @@
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\bin\Debug\net6.0\Kodlama.io.Devs.Domain.deps.json
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\bin\Debug\net6.0\Kodlama.io.Devs.Domain.dll
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\bin\Debug\net6.0\Kodlama.io.Devs.Domain.pdb
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\Kodlama.io.Devs.Domain.csproj.AssemblyReference.cache
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\Kodlama.io.Devs.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\Kodlama.io.Devs.Domain.AssemblyInfoInputs.cache
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\Kodlama.io.Devs.Domain.AssemblyInfo.cs
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\Kodlama.io.Devs.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\Kodlama.io.Devs.Domain.dll
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\refint\Kodlama.io.Devs.Domain.dll
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\Kodlama.io.Devs.Domain.pdb
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Core\Kodlama.io.Devs.Domain\obj\Debug\net6.0\ref\Kodlama.io.Devs.Domain.dll
