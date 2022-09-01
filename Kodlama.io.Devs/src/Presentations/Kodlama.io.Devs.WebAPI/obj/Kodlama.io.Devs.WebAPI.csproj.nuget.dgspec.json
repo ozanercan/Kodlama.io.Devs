@@ -4,14 +4,118 @@
     "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\Kodlama.io.Devs.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\Kodlama.io.Devs.WebAPI.csproj": {
+    "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\Kodlama.io.Devs.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\Kodlama.io.Devs.WebAPI.csproj",
-        "projectName": "Kodlama.io.Devs.WebAPI",
-        "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\Kodlama.io.Devs.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\Kodlama.io.Devs.Application.csproj",
+        "projectName": "Kodlama.io.Devs.Application",
+        "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\Kodlama.io.Devs.Application.csproj",
         "packagesPath": "C:\\Users\\Ozan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ozan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Domain\\Kodlama.io.Devs.Domain.csproj": {
+                "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Domain\\Kodlama.io.Devs.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.2.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.2.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.Linq.Expressions": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Domain\\Kodlama.io.Devs.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Domain\\Kodlama.io.Devs.Domain.csproj",
+        "projectName": "Kodlama.io.Devs.Domain",
+        "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Domain\\Kodlama.io.Devs.Domain.csproj",
+        "packagesPath": "C:\\Users\\Ozan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,7 +147,213 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Infrastructure\\Kodlama.io.Devs.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Infrastructure\\Kodlama.io.Devs.Infrastructure.csproj",
+        "projectName": "Kodlama.io.Devs.Infrastructure",
+        "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Infrastructure\\Kodlama.io.Devs.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Ozan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ozan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Persistence\\Kodlama.io.Devs.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Persistence\\Kodlama.io.Devs.Persistence.csproj",
+        "projectName": "Kodlama.io.Devs.Persistence",
+        "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Persistence\\Kodlama.io.Devs.Persistence.csproj",
+        "packagesPath": "C:\\Users\\Ozan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ozan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\Kodlama.io.Devs.Application.csproj": {
+                "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\Kodlama.io.Devs.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\Kodlama.io.Devs.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\Kodlama.io.Devs.WebAPI.csproj",
+        "projectName": "Kodlama.io.Devs.WebAPI",
+        "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\Kodlama.io.Devs.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\Ozan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Presentations\\Kodlama.io.Devs.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ozan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\Kodlama.io.Devs.Application.csproj": {
+                "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Core\\Kodlama.io.Devs.Application\\Kodlama.io.Devs.Application.csproj"
+              },
+              "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Infrastructure\\Kodlama.io.Devs.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Infrastructure\\Kodlama.io.Devs.Infrastructure.csproj"
+              },
+              "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Persistence\\Kodlama.io.Devs.Persistence.csproj": {
+                "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\Kodlama.io.Devs\\Kodlama.io.Devs\\src\\Infrastructure\\Kodlama.io.Devs.Persistence\\Kodlama.io.Devs.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
