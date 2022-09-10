@@ -1,5 +1,6 @@
 ﻿using Kodlama.io.Devs.Application.Repositories.ProgrammingLanguages;
 using Kodlama.io.Devs.Persistence.Repositories.ProgrammingLanguages;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kodlama.io.Devs.Persistence;
 public static class DependencyInjection
@@ -8,8 +9,9 @@ public static class DependencyInjection
     {
         services.AddDbContext<EfDbContext, EfPostgreDbContext>();
 
-        services.AddScoped<IProgrammingLanguageReadRepository, ProgrammingLanguageReadRepository>();
-        services.AddScoped<IProgrammingLanguageWriteRepository, ProgrammingLanguageWriteRepository>();
+        services.AddDbContext<DbContext, EfDbContext>();
+
+        services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
 
         return services;
     }

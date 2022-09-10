@@ -4,22 +4,15 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Sof
 
 public class SoftDeleteProgrammingLanguageCommandRequestHandler : IRequestHandler<SoftDeleteProgrammingLanguageCommandRequest, IResponse>
 {
-    private readonly IProgrammingLanguageWriteRepository _writeRepository;
-    private readonly IProgrammingLanguageReadRepository _readRepository;
-    public SoftDeleteProgrammingLanguageCommandRequestHandler(IProgrammingLanguageWriteRepository writeRepository, IProgrammingLanguageReadRepository readRepository)
+    private readonly IProgrammingLanguageRepository _repository;
+    public SoftDeleteProgrammingLanguageCommandRequestHandler(IProgrammingLanguageRepository writeRepository)
     {
-        _writeRepository = writeRepository;
-        _readRepository = readRepository;
+        _repository = writeRepository;
     }
 
     public async Task<IResponse> Handle(SoftDeleteProgrammingLanguageCommandRequest request, CancellationToken cancellationToken)
     {
-        var entity = await _readRepository.GetAsync(_programmingLanguage => _programmingLanguage.Id.Equals(request.Id));
-
-        _writeRepository.SoftDelete(entity);
-
-        if (await _writeRepository.SaveChangesAsync() is false)
-            throw new ErrorException(Messages.ProgrammingLanguageIsNotDeleted);
+        var entity = await _repository.GetAsync(_programmingLanguage => _programmingLanguage.Id.Equals(request.Id));
 
         return new SuccessResponse(Messages.ProgrammingLanguageIsDeleted, HttpStatusCode.OK);
     }

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\NArchitecture-Bootcamp\src\corePackages\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\..\Core\Kodlama.io.Devs.Application\Kodlama.io.Devs.Application.csproj" />
   </ItemGroup>
 

@@ -5,22 +5,20 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.Upd
 
 public class UpdateProgrammingLanguageCommandRequestHandler : IRequestHandler<UpdateProgrammingLanguageCommandRequest, IResponse>
 {
-    private readonly IProgrammingLanguageWriteRepository _writeRepository;
-    private readonly IProgrammingLanguageReadRepository _readRepository;
+    private readonly IProgrammingLanguageRepository _repository;
     private readonly IMapper _mapper;
     private readonly ProgrammingLanguagesBusinessRules _programmingLanguagesBusinessRules;
 
-    public UpdateProgrammingLanguageCommandRequestHandler(IProgrammingLanguageWriteRepository writeRepository, IProgrammingLanguageReadRepository readRepository, IMapper mapper, ProgrammingLanguagesBusinessRules programmingLanguagesBusinessRules)
+    public UpdateProgrammingLanguageCommandRequestHandler(IProgrammingLanguageRepository repository, IMapper mapper, ProgrammingLanguagesBusinessRules programmingLanguagesBusinessRules)
     {
-        _writeRepository = writeRepository;
-        _readRepository = readRepository;
+        _repository = repository;
         _mapper = mapper;
         _programmingLanguagesBusinessRules = programmingLanguagesBusinessRules;
     }
 
     public async Task<IResponse> Handle(UpdateProgrammingLanguageCommandRequest request, CancellationToken cancellationToken)
     {
-        var entity = await _readRepository.GetByIdAsync(request.Id, asNoTracking: false);
+        var entity = await _repository.GetAsync(_programmingLanguage => _programmingLanguage.Id.Equals(request.Id));
 
         _programmingLanguagesBusinessRules.IsShouldBeNotNull(entity);
 
@@ -28,9 +26,9 @@ public class UpdateProgrammingLanguageCommandRequestHandler : IRequestHandler<Up
 
         _mapper.Map<UpdateProgrammingLanguageCommandRequest, ProgrammingLanguage>(request, entity);
 
-        _writeRepository.Update(entity);
+        await _repository.UpdateAsync(entity);
 
-        if (await _writeRepository.SaveChangesAsync() is false)
+        if (await _repository.SaveChangesAsync() is false)
             throw new ErrorException(Messages.ProgrammingLanguageIsNotUpdated);
 
         return new SuccessResponse(Messages.ProgrammingLanguageIsUpdated, HttpStatusCode.OK);

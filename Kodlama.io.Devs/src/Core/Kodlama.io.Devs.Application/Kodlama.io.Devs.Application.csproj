@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\NArchitecture-Bootcamp\src\corePackages\Core.Application\Core.Application.csproj" />
+    <ProjectReference Include="..\..\..\..\..\NArchitecture-Bootcamp\src\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
+    <ProjectReference Include="..\..\..\..\..\NArchitecture-Bootcamp\src\corePackages\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\Kodlama.io.Devs.Domain\Kodlama.io.Devs.Domain.csproj" />
   </ItemGroup>
 
