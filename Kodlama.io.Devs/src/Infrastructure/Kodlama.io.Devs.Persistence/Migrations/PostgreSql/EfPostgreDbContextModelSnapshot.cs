@@ -47,13 +47,72 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
+                        .HasColumnType("text")
                         .HasColumnOrder(1);
 
                     b.HasKey("Id");
 
                     b.ToTable("ProgrammingLanguages");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.Technology", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(0);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Technology", (string)null);
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguageTechnology", b =>
+                {
+                    b.HasBaseType("Kodlama.io.Devs.Domain.Entities.Technology");
+
+                    b.Property<int>("ProgrammingLanguageId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    b.HasIndex("ProgrammingLanguageId");
+
+                    b.ToTable("ProgrammingLanguageTechnologies", (string)null);
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguageTechnology", b =>
+                {
+                    b.HasOne("Kodlama.io.Devs.Domain.Entities.Technology", null)
+                        .WithOne()
+                        .HasForeignKey("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguageTechnology", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguage", "ProgrammingLanguage")
+                        .WithMany("ProgrammingLanguageTechnologies")
+                        .HasForeignKey("ProgrammingLanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProgrammingLanguage");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguage", b =>
+                {
+                    b.Navigation("ProgrammingLanguageTechnologies");
                 });
 #pragma warning restore 612, 618
         }

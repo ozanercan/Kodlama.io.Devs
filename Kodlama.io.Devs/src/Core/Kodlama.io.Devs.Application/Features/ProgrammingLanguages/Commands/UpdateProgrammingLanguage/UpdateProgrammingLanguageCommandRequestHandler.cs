@@ -27,7 +27,7 @@ public class UpdateProgrammingLanguageCommandRequestHandler : IRequestHandler<Up
 
         _mapper.Map<UpdateProgrammingLanguageCommandRequest, ProgrammingLanguage>(request, entity);
 
-        await _repository.UpdateAsync(entity);
+        _repository.Update(entity);
 
         if (await _repository.SaveChangesAsync() is false)
             throw new BusinessException(Messages.ProgrammingLanguageIsNotUpdated);

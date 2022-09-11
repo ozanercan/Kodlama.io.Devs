@@ -26,4 +26,8 @@
     <ProjectReference Include="..\Kodlama.io.Devs.Domain\Kodlama.io.Devs.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Technologies\Validators\" />
+  </ItemGroup>
+
 </Project>

@@ -12,4 +12,15 @@ public record Messages
     public const string ProgrammingLanguagesAreListed = "Programlama dilleri listelendi.";
     public const string ProgrammingLanguageIsNotDeleted = "Programlama dili silinemedi.";
     public const string ProgrammingLanguageIsDeleted = "Programlama dili silindi.";
+    public const string ProgrammingLanguageTechnologyIsNotCreated = "Programlama dili teknolojisi oluşturulamadı.";
+    public const string ProgrammingLanguageTechnologyIsCreated = "Programlama dili teknolojisi oluşturuldu.";
+    public const string ProgrammingLanguageTechnologyIsNotUpdated = "Programlama dili teknolojisi güncellenemedi.";
+    public const string ProgrammingLanguageTechnologyIsUpdated = "Programlama dili teknolojisi güncellendi.";
+    public const string ProgrammingLanguageTechnologyIsNotFound = "Programlama dili teknolojisi bulunamadı.";
+    public const string ProgrammingLanguageTechnologiesAreListed = "Programlama dili teknolojileri listelendi.";
+    public const string ProgrammingLanguageTechnologyIsBrought = "Programlama dili teknolojisi getirildi.";
+    public const string ProgrammingLanguageTechnologyIsNotDeleted = "Programlama dili teknolojisi silinemedi.";
+    public const string ProgrammingLanguageTechnologyIsDeleted = "Programlama dili teknolojisi silindi.";
+    public const string ProgrammingLanguagesAreNotFound = "Programlama dilleri bulunamadı.";
+    public const string ProgrammingLanguageTechnologiesAreNotFound = "Programlama dili teknolojileri bulunamadı.";
 }

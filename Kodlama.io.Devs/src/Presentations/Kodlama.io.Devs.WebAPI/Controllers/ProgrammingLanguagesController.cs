@@ -29,7 +29,7 @@ public class ProgrammingLanguagesController : ApiControllerBase
     public async Task<IActionResult> GetByIdAsync(int id)
         => base.GenerateResponse(await _mediator.Send(new GetProgrammingLanguageByIdQueryRequest() { Id = id }));
 
-    [HttpPut("get-all")]
+    [HttpGet("get-all")]
     public async Task<IActionResult> GetAllAsync()
         => base.GenerateResponse(await _mediator.Send(new GetProgrammingLanguagesQueryRequest()));
 }

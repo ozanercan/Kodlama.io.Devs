@@ -29,4 +29,6 @@ public abstract class EfDbContext : DbContext
     }
 
     public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
+    public DbSet<Technology> Technology { get; set; }
+    public DbSet<ProgrammingLanguageTechnology> ProgrammingLanguageTechnologies { get; set; }
 }

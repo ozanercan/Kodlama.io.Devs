@@ -1,5 +1,4 @@
-﻿using Kodlama.io.Devs.Application.Constants;
-using Kodlama.io.Devs.Domain.Entities;
+﻿using Kodlama.io.Devs.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -17,7 +16,6 @@ public class ProgrammingLanguageEntityTypeConfiguration : IEntityTypeConfigurati
 
         builder.Property(_programmingLanguage => _programmingLanguage.Name)
             .HasColumnOrder(1)
-            .HasMaxLength(EntityColumnLimits.ProgrammingLanguageNameMaxLength)
             .IsRequired();
 
         builder.Property(_programmingLanguage => _programmingLanguage.CreatedDate)

@@ -10,7 +10,7 @@ public class CreateProgrammingLanguageCommandRequestValidator : AbstractValidato
         RuleFor(_request => _request.Name)
             .NotNull()
             .NotEmpty()
-            .MinimumLength(EntityColumnLimits.ProgrammingLanguageNameMinLength)
-            .MaximumLength(EntityColumnLimits.ProgrammingLanguageNameMaxLength);
+            .MinimumLength(EntityColumnLimits.ProgrammingLanguage.NameMinLength)
+            .MaximumLength(EntityColumnLimits.ProgrammingLanguage.NameMaxLength);
     }
 }
