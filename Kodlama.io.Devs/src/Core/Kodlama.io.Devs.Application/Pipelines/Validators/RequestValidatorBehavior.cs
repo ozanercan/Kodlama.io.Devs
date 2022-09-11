@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Core.CrossCuttingConcerns.Exceptions;
+using FluentValidation;
 using FluentValidation.Results;
 
 namespace Kodlama.io.Devs.Application.Pipelines.Validators;
@@ -24,7 +25,7 @@ public class RequestValidationBehavior<TRequest, TResponse> : IPipelineBehavior<
                                            .Where(failure => failure != null)
                                            .ToList();
 
-        if (failures.Any()) throw new Application.Exceptions.ValidationException(failures.FirstOrDefault().ErrorMessage);
+        if (failures.Any()) throw new ValidationException(failures);
         return next();
     }
 }

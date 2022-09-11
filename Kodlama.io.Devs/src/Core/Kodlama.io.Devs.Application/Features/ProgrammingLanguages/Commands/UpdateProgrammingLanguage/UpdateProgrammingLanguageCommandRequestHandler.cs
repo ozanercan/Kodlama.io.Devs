@@ -1,4 +1,5 @@
-﻿using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.BusinessRules;
+﻿using Core.CrossCuttingConcerns.Exceptions;
+using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.BusinessRules;
 using Kodlama.io.Devs.Application.Repositories.ProgrammingLanguages;
 
 namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.UpdateProgrammingLanguage;
@@ -29,7 +30,7 @@ public class UpdateProgrammingLanguageCommandRequestHandler : IRequestHandler<Up
         await _repository.UpdateAsync(entity);
 
         if (await _repository.SaveChangesAsync() is false)
-            throw new ErrorException(Messages.ProgrammingLanguageIsNotUpdated);
+            throw new BusinessException(Messages.ProgrammingLanguageIsNotUpdated);
 
         return new SuccessResponse(Messages.ProgrammingLanguageIsUpdated, HttpStatusCode.OK);
     }

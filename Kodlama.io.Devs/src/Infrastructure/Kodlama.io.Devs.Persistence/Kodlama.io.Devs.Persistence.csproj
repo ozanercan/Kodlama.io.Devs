@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Migrations\PostgreSql\" />
   </ItemGroup>
 
   <ItemGroup>

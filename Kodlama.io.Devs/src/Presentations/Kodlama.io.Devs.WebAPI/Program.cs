@@ -1,6 +1,6 @@
+using Core.CrossCuttingConcerns.Exceptions;
 using Kodlama.io.Devs.Application;
 using Kodlama.io.Devs.Application.Dtos.ConnectionOptions;
-using Kodlama.io.Devs.Application.Middlewares.Exceptions;
 using Kodlama.io.Devs.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +24,7 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseHttpsRedirection();
-    app.UseMiddleware<ExceptionMiddleware>();
+    app.ConfigureCustomExceptionMiddleware();
 }
 
 

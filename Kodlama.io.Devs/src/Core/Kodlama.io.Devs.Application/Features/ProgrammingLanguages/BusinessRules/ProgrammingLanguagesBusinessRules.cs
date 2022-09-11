@@ -1,4 +1,5 @@
-﻿using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries;
+﻿using Core.CrossCuttingConcerns.Exceptions;
+using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries;
 
 namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.BusinessRules;
 public class ProgrammingLanguagesBusinessRules
@@ -19,7 +20,7 @@ public class ProgrammingLanguagesBusinessRules
     /// <returns>Dbde varsa Exception döndürür.</returns>
     /// <exception cref="BusinessException"></exception>
     /// <summary>
-    public async Task DatabaseShouldNotHaveProgrammingLanguageNameAsync(string name, Guid? ignoreId = null)
+    public async Task DatabaseShouldNotHaveProgrammingLanguageNameAsync(string name, int? ignoreId = null)
     {
         var isThereResult = await _mediator.Send(new IsThereProgrammingLanguageByNameQueryRequest()
         {

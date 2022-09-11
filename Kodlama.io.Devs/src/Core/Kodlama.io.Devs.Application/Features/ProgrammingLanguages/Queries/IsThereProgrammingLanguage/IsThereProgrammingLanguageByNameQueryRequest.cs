@@ -2,6 +2,6 @@
 
 public class IsThereProgrammingLanguageByNameQueryRequest : IRequest<bool>
 {
-    public Guid? IgnoreId { get; set; }
+    public int? IgnoreId { get; set; }
     public string Name { get; set; }
 }

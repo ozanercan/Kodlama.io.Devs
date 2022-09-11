@@ -1,4 +1,5 @@
-﻿using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.BusinessRules;
+﻿using Core.CrossCuttingConcerns.Exceptions;
+using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.BusinessRules;
 using Kodlama.io.Devs.Application.Repositories.ProgrammingLanguages;
 
 namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Commands.CreateProgrammingLanguage;
@@ -24,7 +25,7 @@ public class CreateProgrammingLanguageCommandRequestHandler : IRequestHandler<Cr
         await _writeRepository.CreateAsync(programingLanguageToAdd);
 
         if (await _writeRepository.SaveChangesAsync() is false)
-            throw new ErrorException(Messages.ProgrammingLanguageIsNotCreated);
+            throw new BusinessException(Messages.ProgrammingLanguageIsNotCreated);
 
         var response = _mapper.Map<ProgrammingLanguage, CreateProgrammingLanguageCommandResponse>(programingLanguageToAdd);
 

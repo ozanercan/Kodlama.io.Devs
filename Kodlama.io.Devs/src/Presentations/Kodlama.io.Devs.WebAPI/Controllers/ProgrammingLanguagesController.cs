@@ -26,7 +26,7 @@ public class ProgrammingLanguagesController : ApiControllerBase
         => base.GenerateResponse(await _mediator.Send(request));
 
     [HttpPut("get-by-id/{id}")]
-    public async Task<IActionResult> GetByIdAsync(Guid id)
+    public async Task<IActionResult> GetByIdAsync(int id)
         => base.GenerateResponse(await _mediator.Send(new GetProgrammingLanguageByIdQueryRequest() { Id = id }));
 
     [HttpPut("get-all")]

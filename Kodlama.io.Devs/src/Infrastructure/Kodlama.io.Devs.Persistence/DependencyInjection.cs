@@ -7,9 +7,7 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddPersistenceDependencies(this IServiceCollection services)
     {
-        services.AddDbContext<EfDbContext, EfPostgreDbContext>();
-
-        services.AddDbContext<DbContext, EfDbContext>();
+        services.AddDbContext<DbContext, EfPostgreDbContext>();
 
         services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
 
