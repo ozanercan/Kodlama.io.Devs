@@ -11,4 +11,9 @@ public record EntityColumnLimits
         public const byte NameMinLength = 1;
         public const byte NameMaxLength = 50;
     }
+    public record UserSocialAccount
+    {
+        public const byte PathMinLength = 4;
+        public const byte PathMaxLength = 100;
+    }
 }

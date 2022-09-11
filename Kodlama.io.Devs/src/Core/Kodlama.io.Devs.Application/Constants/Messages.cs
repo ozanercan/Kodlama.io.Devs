@@ -31,4 +31,11 @@ public record Messages
     public const string UserLoginSuccessful = "Kullanıcı girişi başarılı.";
     public const string UserOperationClaimsAreCreated = "Kullanıcı Rolleri oluşturuldu.";
     public const string UserOperationClaimsAreNotCreated = "Kullanıcı Rolleri oluşturulamadı.";
+    public const string UserSocialAccountIsNotCreated = "Kullanıcı sosyal hesabı oluşturulamadı.";
+    public const string UserSocialAccountIsCreated = "Kullanıcı sosyal hesabı oluşturuldu.";
+    public const string UserSocialAccountIsNotFound = "Kullanıcı sosyal medya hesabı bulunamadı.";
+    public const string UserSocialAccountIsNotUpdated = "Kullanıcının sosyal medya hesabı güncellenemedi.";
+    public const string UserSocialAccountIsUpdated = "Kullanıcının sosyal medya hesabı güncellendi.";
+    public const string UserSocialAccountIsNotDeleted = "Kullanıcının sosyal medya hesabı silinemedi.";
+    public const string UserSocialAccountIsDeleted =" Kullanıcının sosyal medya hesabı silindi.";
 }

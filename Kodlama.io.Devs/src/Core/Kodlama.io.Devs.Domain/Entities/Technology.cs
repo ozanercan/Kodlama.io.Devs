@@ -1,5 +1,5 @@
 ﻿using Core.Persistence.Repositories;
-using Kodlama.io.Devs.Domain.Commons.Base;
+using Core.Security._Bases;
 
 namespace Kodlama.io.Devs.Domain.Entities;
 public class Technology : EntityBase, ISoftDelete

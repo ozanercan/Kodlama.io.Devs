@@ -36,7 +36,7 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
                     b.HasKey("Id");
 
-                    b.ToTable("OperationClaim", (string)null);
+                    b.ToTable("OperationClaim");
 
                     b.HasData(
                         new
@@ -99,7 +99,81 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RefreshTokens", (string)null);
+                    b.ToTable("RefreshTokens");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.Socials.SocialPlatform", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(1);
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(2);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialPlatforms");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Github",
+                            Url = "https://github.com/"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Facebook",
+                            Url = "https://facebook.com/"
+                        });
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.Socials.UserSocialAccount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(0);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnOrder(4);
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(3);
+
+                    b.Property<int>("SocialPlatformId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(2);
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SocialPlatformId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserSocialAccounts");
                 });
 
             modelBuilder.Entity("Core.Security.Entities.User", b =>
@@ -145,7 +219,7 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
@@ -168,7 +242,7 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserOperationClaims", (string)null);
+                    b.ToTable("UserOperationClaims");
                 });
 
             modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguage", b =>
@@ -201,7 +275,7 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProgrammingLanguages", (string)null);
+                    b.ToTable("ProgrammingLanguages");
                 });
 
             modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.Technology", b =>
@@ -253,6 +327,25 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Core.Security.Entities.Socials.UserSocialAccount", b =>
+                {
+                    b.HasOne("Core.Security.Entities.Socials.SocialPlatform", "SocialPlatform")
+                        .WithMany("UserSocialAccounts")
+                        .HasForeignKey("SocialPlatformId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany("UserSocialAccounts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SocialPlatform");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
                 {
                     b.HasOne("Core.Security.Entities.OperationClaim", "OperationClaim")
@@ -294,11 +387,18 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
                     b.Navigation("UserOperationClaims");
                 });
 
+            modelBuilder.Entity("Core.Security.Entities.Socials.SocialPlatform", b =>
+                {
+                    b.Navigation("UserSocialAccounts");
+                });
+
             modelBuilder.Entity("Core.Security.Entities.User", b =>
                 {
                     b.Navigation("RefreshTokens");
 
                     b.Navigation("UserOperationClaims");
+
+                    b.Navigation("UserSocialAccounts");
                 });
 
             modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguage", b =>

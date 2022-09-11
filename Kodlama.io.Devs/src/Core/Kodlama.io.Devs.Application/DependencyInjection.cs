@@ -2,6 +2,7 @@
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.BusinessRules;
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguageTechnologies.BusinessRules;
 using Kodlama.io.Devs.Application.Features.Users.BusinessRules;
+using Kodlama.io.Devs.Application.Features.UserSocialAccounts.BusinessRules;
 using Kodlama.io.Devs.Application.Pipelines.Validators;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -20,6 +21,7 @@ public static class DependencyInjection
         services.AddScoped<ProgrammingLanguagesBusinessRules>();
         services.AddScoped<ProgrammingLanguageTechnologyBusinessRules>();
         services.AddScoped<UserBusinessRules>();
+        services.AddScoped<UserSocialAccountBusinessRules>();
 
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 

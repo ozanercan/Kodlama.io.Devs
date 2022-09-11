@@ -1,5 +1,5 @@
-﻿using Core.Persistence.Repositories;
-using Core.Security.Entities;
+﻿using Core.Security.Entities;
+using Core.Security.Entities.Socials;
 using Kodlama.io.Devs.Domain.Commons.Base;
 using Kodlama.io.Devs.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -37,4 +37,7 @@ public abstract class EfDbContext : DbContext
     public DbSet<Technology> Technology { get; set; }
     public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
     public DbSet<ProgrammingLanguageTechnology> ProgrammingLanguageTechnologies { get; set; }
+
+    public DbSet<SocialPlatform> SocialPlatforms { get; set; }
+    public DbSet<UserSocialAccount> UserSocialAccounts { get; set; }
 }
