@@ -1,9 +1,7 @@
-﻿global using Kodlama.io.Devs.Application.Repositories.Bases;
+﻿global using AutoMapper;
+global using Kodlama.io.Devs.Application.Constants;
 global using Kodlama.io.Devs.Application.Responses.Abstract;
 global using Kodlama.io.Devs.Application.Responses.Concrete;
-global using Kodlama.io.Devs.Application.Exceptions;
-global using MediatR;
-global using Kodlama.io.Devs.Application.Constants;
 global using Kodlama.io.Devs.Domain.Entities;
-global using AutoMapper;
+global using MediatR;
 global using System.Net;

@@ -2,9 +2,17 @@ C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructur
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Kodlama.io.Devs.Persistence.runtimeconfig.json
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Kodlama.io.Devs.Persistence.dll
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Kodlama.io.Devs.Persistence.pdb
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.Application.dll
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.CrossCuttingConcerns.dll
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.Persistence.dll
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.Security.dll
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Kodlama.io.Devs.Application.dll
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Kodlama.io.Devs.Domain.dll
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.Persistence.pdb
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Kodlama.io.Devs.Application.pdb
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.Application.pdb
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.CrossCuttingConcerns.pdb
+C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Core.Security.pdb
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\bin\Debug\net6.0\Kodlama.io.Devs.Domain.pdb
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\obj\Debug\net6.0\Kodlama.io.Devs.Persistence.csproj.AssemblyReference.cache
 C:\Users\Ozan\Documents\GitHub\Kodlama.io.Devs\Kodlama.io.Devs\src\Infrastructure\Kodlama.io.Devs.Persistence\obj\Debug\net6.0\Kodlama.io.Devs.Persistence.GeneratedMSBuildEditorConfig.editorconfig

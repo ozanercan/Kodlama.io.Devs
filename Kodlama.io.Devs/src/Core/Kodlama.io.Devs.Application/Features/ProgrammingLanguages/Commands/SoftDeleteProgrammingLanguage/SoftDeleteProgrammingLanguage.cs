@@ -2,5 +2,5 @@
 
 public class SoftDeleteProgrammingLanguageCommandRequest : IRequest<IResponse>
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 }

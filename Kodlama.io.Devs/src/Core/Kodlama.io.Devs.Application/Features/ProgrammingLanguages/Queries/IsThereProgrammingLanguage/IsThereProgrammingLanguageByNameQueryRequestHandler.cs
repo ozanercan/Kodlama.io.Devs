@@ -4,13 +4,13 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries;
 
 public class IsThereProgrammingLanguageByNameQueryRequestHandler : IRequestHandler<IsThereProgrammingLanguageByNameQueryRequest, bool>
 {
-    private readonly IProgrammingLanguageReadRepository _readRepository;
+    private readonly IProgrammingLanguageRepository _repository;
 
-    public IsThereProgrammingLanguageByNameQueryRequestHandler(IProgrammingLanguageReadRepository readRepository)
+    public IsThereProgrammingLanguageByNameQueryRequestHandler(IProgrammingLanguageRepository repository)
     {
-        _readRepository = readRepository;
+        _repository = repository;
     }
 
     public async Task<bool> Handle(IsThereProgrammingLanguageByNameQueryRequest request, CancellationToken cancellationToken)
-        => await _readRepository.IsThereNameAsync(request.Name, request.IgnoreId);
+        => await _repository.AnyAsync(x => x.Name.Equals(request.Name) && x.Id.Equals(request.IgnoreId) == false);
 }

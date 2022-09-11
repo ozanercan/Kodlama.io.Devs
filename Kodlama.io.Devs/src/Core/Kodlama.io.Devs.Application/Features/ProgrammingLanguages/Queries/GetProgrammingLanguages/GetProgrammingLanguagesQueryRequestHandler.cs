@@ -5,24 +5,24 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetP
 
 public class GetProgrammingLanguagesQueryRequestHandler : IRequestHandler<GetProgrammingLanguagesQueryRequest, IDataResponse<ICollection<GetProgrammingLanguagesQueryResponse>>>
 {
-    private readonly IProgrammingLanguageReadRepository _readRepository;
+    private readonly IProgrammingLanguageRepository _repository;
     private readonly IMapper _mapper;
     private readonly ProgrammingLanguagesBusinessRules _programmingLanguagesBusinessRules;
 
-    public GetProgrammingLanguagesQueryRequestHandler(IProgrammingLanguageReadRepository readRepository, IMapper mapper, ProgrammingLanguagesBusinessRules programmingLanguagesBusinessRules)
+    public GetProgrammingLanguagesQueryRequestHandler(IProgrammingLanguageRepository repository, IMapper mapper, ProgrammingLanguagesBusinessRules programmingLanguagesBusinessRules)
     {
-        _readRepository = readRepository;
+        _repository = repository;
         _mapper = mapper;
         _programmingLanguagesBusinessRules = programmingLanguagesBusinessRules;
     }
 
     public async Task<IDataResponse<ICollection<GetProgrammingLanguagesQueryResponse>>> Handle(GetProgrammingLanguagesQueryRequest request, CancellationToken cancellationToken)
     {
-        var programmingLanguages = await _readRepository.GetAllAsync();
+        var programmingLanguages = await _repository.GetListAsync();
 
-        _programmingLanguagesBusinessRules.IsShouldBeAny(programmingLanguages);
+        _programmingLanguagesBusinessRules.IsShouldBeAny(programmingLanguages.Items);
 
-        var responseModel = _mapper.Map<ICollection<ProgrammingLanguage>, ICollection<GetProgrammingLanguagesQueryResponse>>(programmingLanguages);
+        var responseModel = _mapper.Map<ICollection<ProgrammingLanguage>, ICollection<GetProgrammingLanguagesQueryResponse>>(programmingLanguages.Items);
 
         return new SuccessDataResponse<ICollection<GetProgrammingLanguagesQueryResponse>>(Messages.ProgrammingLanguagesAreListed, HttpStatusCode.OK, responseModel);
     }

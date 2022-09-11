@@ -22,12 +22,237 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("Core.Security.Entities.OperationClaim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OperationClaim");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Unknown"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "User"
+                        });
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnOrder(3);
+
+                    b.Property<string>("CreatedByIp")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(4);
+
+                    b.Property<DateTime>("Expires")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("ReasonRevoked")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ReplacedByToken")
+                        .HasColumnType("text")
+                        .HasColumnOrder(7);
+
+                    b.Property<DateTime?>("Revoked")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnOrder(5);
+
+                    b.Property<string>("RevokedByIp")
+                        .HasColumnType("text")
+                        .HasColumnOrder(6);
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(1);
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RefreshTokens");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.Socials.SocialPlatform", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(1);
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(2);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialPlatforms");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Github",
+                            Url = "https://github.com/"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Facebook",
+                            Url = "https://facebook.com/"
+                        });
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.Socials.UserSocialAccount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(0);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnOrder(4);
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(3);
+
+                    b.Property<int>("SocialPlatformId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(2);
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SocialPlatformId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserSocialAccounts");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AuthenticatorType")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(7);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(3);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(1);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(2);
+
+                    b.Property<byte[]>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("bytea")
+                        .HasColumnOrder(5);
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("bytea")
+                        .HasColumnOrder(4);
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("boolean")
+                        .HasColumnOrder(6);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("OperationClaimId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OperationClaimId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserOperationClaims");
+                });
+
             modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguage", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
+                        .HasColumnType("integer")
                         .HasColumnOrder(0);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone")
@@ -45,13 +270,140 @@ namespace Kodlama.io.Devs.Persistence.Migrations.PostgreSql
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
+                        .HasColumnType("text")
                         .HasColumnOrder(1);
 
                     b.HasKey("Id");
 
                     b.ToTable("ProgrammingLanguages");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.Technology", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnOrder(0);
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false)
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnOrder(1);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Technology", (string)null);
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguageTechnology", b =>
+                {
+                    b.HasBaseType("Kodlama.io.Devs.Domain.Entities.Technology");
+
+                    b.Property<int>("ProgrammingLanguageId")
+                        .HasColumnType("integer")
+                        .HasColumnOrder(1);
+
+                    b.HasIndex("ProgrammingLanguageId");
+
+                    b.ToTable("ProgrammingLanguageTechnologies", (string)null);
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.RefreshToken", b =>
+                {
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.Socials.UserSocialAccount", b =>
+                {
+                    b.HasOne("Core.Security.Entities.Socials.SocialPlatform", "SocialPlatform")
+                        .WithMany("UserSocialAccounts")
+                        .HasForeignKey("SocialPlatformId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany("UserSocialAccounts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SocialPlatform");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
+                {
+                    b.HasOne("Core.Security.Entities.OperationClaim", "OperationClaim")
+                        .WithMany("UserOperationClaims")
+                        .HasForeignKey("OperationClaimId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany("UserOperationClaims")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OperationClaim");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguageTechnology", b =>
+                {
+                    b.HasOne("Kodlama.io.Devs.Domain.Entities.Technology", null)
+                        .WithOne()
+                        .HasForeignKey("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguageTechnology", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguage", "ProgrammingLanguage")
+                        .WithMany("ProgrammingLanguageTechnologies")
+                        .HasForeignKey("ProgrammingLanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProgrammingLanguage");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.OperationClaim", b =>
+                {
+                    b.Navigation("UserOperationClaims");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.Socials.SocialPlatform", b =>
+                {
+                    b.Navigation("UserSocialAccounts");
+                });
+
+            modelBuilder.Entity("Core.Security.Entities.User", b =>
+                {
+                    b.Navigation("RefreshTokens");
+
+                    b.Navigation("UserOperationClaims");
+
+                    b.Navigation("UserSocialAccounts");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Devs.Domain.Entities.ProgrammingLanguage", b =>
+                {
+                    b.Navigation("ProgrammingLanguageTechnologies");
                 });
 #pragma warning restore 612, 618
         }

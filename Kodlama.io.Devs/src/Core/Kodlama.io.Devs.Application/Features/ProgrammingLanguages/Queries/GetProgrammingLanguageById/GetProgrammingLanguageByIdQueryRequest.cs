@@ -2,5 +2,5 @@
 
 public class GetProgrammingLanguageByIdQueryRequest : IRequest<IDataResponse<GetProgrammingLanguageByIdQueryResponse>>
 {
-    public Guid Id { get; set; }
+    public int Id { get; set; }
 }
