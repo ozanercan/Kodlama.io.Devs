@@ -1,4 +1,6 @@
-﻿using Kodlama.io.Devs.Domain.Commons.Base;
+﻿using Core.Persistence.Repositories;
+using Core.Security.Entities;
+using Kodlama.io.Devs.Domain.Commons.Base;
 using Kodlama.io.Devs.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -28,7 +30,11 @@ public abstract class EfDbContext : DbContext
         return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
     }
 
-    public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
+
     public DbSet<Technology> Technology { get; set; }
+    public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
     public DbSet<ProgrammingLanguageTechnology> ProgrammingLanguageTechnologies { get; set; }
 }

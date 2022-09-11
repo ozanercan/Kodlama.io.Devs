@@ -23,4 +23,12 @@ public record Messages
     public const string ProgrammingLanguageTechnologyIsDeleted = "Programlama dili teknolojisi silindi.";
     public const string ProgrammingLanguagesAreNotFound = "Programlama dilleri bulunamadı.";
     public const string ProgrammingLanguageTechnologiesAreNotFound = "Programlama dili teknolojileri bulunamadı.";
+    public const string UserIsNotCreated = "Kullanıcı oluşturulamadı.";
+    public const string UserIsCreated = "Kullanıcı oluşturuldu.";
+    public const string EmailOrPasswordAreIncorrect = "Email or password are incorrect.";
+    public const string RefreshTokenIsNotCreated = "Refresh token oluşturulamadı.";
+    public const string UserLoginFailed = "Kullanıcı girişi başarısız.";
+    public const string UserLoginSuccessful = "Kullanıcı girişi başarılı.";
+    public const string UserOperationClaimsAreCreated = "Kullanıcı Rolleri oluşturuldu.";
+    public const string UserOperationClaimsAreNotCreated = "Kullanıcı Rolleri oluşturulamadı.";
 }

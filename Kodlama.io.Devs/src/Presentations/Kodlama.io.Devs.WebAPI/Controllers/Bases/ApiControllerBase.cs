@@ -1,10 +1,10 @@
-﻿using Kodlama.io.Devs.Application.Responses.Abstract;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
+﻿using Kodlama.io.Devs.Application.Constants;
+using Kodlama.io.Devs.Application.Responses.Abstract;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Kodlama.io.Devs.WebAPI.Controllers.Bases;
 
-[ApiController]
+[ApiController, Authorize(AuthenticationSchemes = ProjectSettings.AuthenticationScheme)]
 public class ApiControllerBase : ControllerBase
 {
     protected readonly IMediator _mediator;

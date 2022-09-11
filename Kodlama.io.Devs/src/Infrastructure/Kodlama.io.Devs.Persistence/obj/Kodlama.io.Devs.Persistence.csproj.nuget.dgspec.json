@@ -67,11 +67,11 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.2.1, )"
+              "version": "[11.2.2, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[11.2.1, )"
+              "version": "[11.2.2, )"
             },
             "MediatR": {
               "target": "Package",
@@ -80,6 +80,10 @@
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[10.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.8, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -147,6 +151,9 @@
             "projectReferences": {
               "C:\\Users\\Ozan\\Documents\\GitHub\\NArchitecture-Bootcamp\\src\\corePackages\\Core.Persistence\\Core.Persistence.csproj": {
                 "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\NArchitecture-Bootcamp\\src\\corePackages\\Core.Persistence\\Core.Persistence.csproj"
+              },
+              "C:\\Users\\Ozan\\Documents\\GitHub\\NArchitecture-Bootcamp\\src\\corePackages\\Core.Security\\Core.Security.csproj": {
+                "projectPath": "C:\\Users\\Ozan\\Documents\\GitHub\\NArchitecture-Bootcamp\\src\\corePackages\\Core.Security\\Core.Security.csproj"
               }
             }
           }
@@ -305,11 +312,11 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[10.3.6, )"
+              "version": "[11.2.2, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[10.3.6, )"
+              "version": "[11.2.2, )"
             },
             "MediatR": {
               "target": "Package",
@@ -385,7 +392,7 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[10.3.6, )"
+              "version": "[11.2.2, )"
             },
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
@@ -397,7 +404,7 @@
             },
             "Serilog": {
               "target": "Package",
-              "version": "[2.10.0, )"
+              "version": "[2.11.0, )"
             },
             "Serilog.Sinks.File": {
               "target": "Package",
@@ -465,11 +472,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.8, )"
             },
             "System.Linq.Dynamic.Core": {
               "target": "Package",
-              "version": "[1.2.17, )"
+              "version": "[1.2.20, )"
             }
           },
           "imports": [
@@ -545,7 +552,7 @@
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.15.1, )"
+              "version": "[6.23.1, )"
             },
             "Otp.NET": {
               "target": "Package",
@@ -553,7 +560,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.8.0, )"
+              "version": "[6.23.1, )"
             }
           },
           "imports": [
